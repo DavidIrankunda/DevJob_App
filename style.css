@@ -1,0 +1,203 @@
+/* Root Variables */
+:root {
+    --bg-color-light: #f4f4f9;
+    --text-color-light: #333;
+    --card-bg-light: #fff;
+    --border-light: #ddd;
+    --button-bg-light: #007bff;
+    --button-text-light: #fff;
+
+    --bg-color-dark: #1e1e2f;
+    --text-color-dark: #f4f4f9;
+    --card-bg-dark: #252535;
+    --border-dark: #444;
+    --button-bg-dark: #007bff;
+    --button-text-dark: #fff;
+
+    --border-radius: 8px;
+    --transition: 0.3s;
+    --font-family: Arial, sans-serif;
+}
+
+/* General Styles */
+body {
+    margin: 0;
+    font-family: var(--font-family);
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+    transition: var(--transition);
+}
+
+body.dark-mode {
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.toggle-mode {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 25px;
+    background: var(--button-bg-light);
+    border-radius: var(--border-radius);
+    border: none;
+    position: relative;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.toggle-mode .icon-sun,
+.toggle-mode .icon-moon {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+}
+
+.toggle-mode .icon-sun {
+    left: 5px;
+    color: yellow;
+}
+
+.toggle-mode .icon-moon {
+    right: 5px;
+    color: white;
+    display: none;
+}
+
+body.dark-mode .toggle-mode {
+    background: var(--button-bg-dark);
+}
+
+body.dark-mode .toggle-mode .icon-sun {
+    display: none;
+}
+
+body.dark-mode .toggle-mode .icon-moon {
+    display: block;
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.search-field {
+    position: relative;
+    flex: 1;
+}
+
+.search-field input {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    font-size: 16px;
+    border: 1px solid var(--border-light);
+    border-radius: var(--border-radius);
+    background: var(--card-bg-light);
+    color: var(--text-color-light);
+    transition: var(--transition);
+}
+
+.search-field .icon-search,
+.search-field .icon-location {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: var(--text-color-light);
+}
+
+body.dark-mode .search-field input {
+    background: var(--card-bg-dark);
+    border: 1px solid var(--border-dark);
+    color: var(--text-color-dark);
+}
+
+.checkbox-field {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#searchButton {
+    background: var(--button-bg-light);
+    color: var(--button-text-light);
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+body.dark-mode #searchButton {
+    background: var(--button-bg-dark);
+    color: var(--button-text-dark);
+}
+
+/* Job Grid */
+.job-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.job-card {
+    background: var(--card-bg-light);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-light);
+    transition: var(--transition);
+}
+
+body.dark-mode .job-card {
+    background: var(--card-bg-dark);
+    border: 1px solid var(--border-dark);
+}
+
+.job-card h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+}
+
+.job-card p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* Load More Button */
+.load-more {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    background: var(--button-bg-light);
+    color: var(--button-text-light);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+body.dark-mode .load-more {
+    background: var(--button-bg-dark);
+    color: var(--button-text-dark);
+}
