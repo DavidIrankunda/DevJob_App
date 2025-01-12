@@ -1,45 +1,46 @@
-// // JavaScript Code for Search and Filters
+// JavaScript for theme toggle and search functionality
 
-// document.addEventListener("DOMContentLoaded", () => {
-//     const searchInput = document.querySelector("#searchInput");
-//     const locationInput = document.querySelector("#locationInput");
-//     const fullTimeCheckbox = document.querySelector("#fullTimeCheckbox");
-//     const jobCards = document.querySelectorAll(".job-card");
-//     const themeSwitch = document.querySelector("#themeSwitch");
-
-//     // Filter Jobs Function
-//     const filterJobs = () => {
-//         const searchText = searchInput.value.toLowerCase();
-//         const locationText = locationInput.value.toLowerCase();
-//         const isFullTime = fullTimeCheckbox.checked;
-
-//         jobCards.forEach((card) => {
-//             const jobTitle = card.querySelector("h2").textContent.toLowerCase();
-//             const jobLocation = card.querySelector(".location").textContent.toLowerCase();
-//             const jobType = card.querySelector(".job-type").textContent.toLowerCase();
-
-//             const matchesSearch = jobTitle.includes(searchText);
-//             const matchesLocation = jobLocation.includes(locationText);
-//             const matchesFullTime = isFullTime ? jobType.includes("full-time") : true;
-
-//             if (matchesSearch && matchesLocation && matchesFullTime) {
-//                 card.style.display = "block";
-//             } else {
-//                 card.style.display = "none";
-//             }
-//         });
-//     };
-
-//     // Theme Toggle Function
-//     const toggleTheme = () => {
-//         const currentTheme = document.body.getAttribute("data-theme");
-//         const newTheme = currentTheme === "dark" ? "light" : "dark";
-//         document.body.setAttribute("data-theme", newTheme);
-//     };
-
-//     // Event Listeners
-//     searchInput.addEventListener("input", filterJobs);
-//     locationInput.addEventListener("input", filterJobs);
-//     fullTimeCheckbox.addEventListener("change", filterJobs);
-//     themeSwitch.addEventListener("change", toggleTheme);
-// });
+document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.querySelector('.theme-switch input');
+    const body = document.body;
+  
+    // Theme Toggle
+    themeToggle.addEventListener('change', () => {
+      body.classList.toggle('dark', themeToggle.checked);
+    });
+  
+    // Search Functionality
+    const searchButton = document.querySelector('.search-bar button');
+    const titleInput = document.querySelector('.search-bar input[placeholder="Filter by title, companies, expertise..."]');
+    const locationInput = document.querySelector('.search-bar input[placeholder="Filter by location..."]');
+    const fullTimeOnly = document.querySelector('.search-bar input[type="checkbox"]');
+    const jobCards = document.querySelectorAll('.job-card');
+  
+    searchButton.addEventListener('click', () => {
+      const titleQuery = titleInput.value.toLowerCase();
+      const locationQuery = locationInput.value.toLowerCase();
+      const isFullTime = fullTimeOnly.checked;
+  
+      jobCards.forEach(card => {
+        const jobTitle = card.querySelector('h3').textContent.toLowerCase();
+        const jobLocation = card.querySelector('p:last-child').textContent.toLowerCase();
+        const jobType = card.querySelector('p:nth-child(2)').textContent.toLowerCase();
+  
+        let matchesTitle = !titleQuery || jobTitle.includes(titleQuery);
+        let matchesLocation = !locationQuery || jobLocation.includes(locationQuery);
+        let matchesType = !isFullTime || jobType.includes('full time');
+  
+        if (matchesTitle && matchesLocation && matchesType) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  
+    // Reset search inputs on page load
+    titleInput.value = '';
+    locationInput.value = '';
+    fullTimeOnly.checked = false;
+  });
+  

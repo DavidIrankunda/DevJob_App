@@ -7,128 +7,143 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Header Section -->
     <header>
-        <div class="header-container">
-            <h1 class="logo">devjobs</h1>
-            <div class="theme-switch">
-                <span class="sun-icon">☀️</span>
-                <input type="checkbox" id="themeToggle">
-                <span class="moon-icon">🌙</span>
-            </div>
-        </div>
-
-        <br>
-        <div class="search-bar">
-            <div class="search-input">
-                <input type="text" id="titleFilter" placeholder="Filter by title, company, expertise">
-                <i class="icon">🔍</i>
-            </div>
-            <div class="search-input">
-                <input type="text" id="locationFilter" placeholder="Filter by location">
-                <i class="icon">📍</i>
-            </div>
-            <div class="search-options">
-                <label>
-                    <input type="checkbox" id="fullTimeOnly">
-                    Full Time Only
-                </label>
-                <button id="searchBtn">Search</button>
-            </div>
+        <div class="logo">devjobs</div>
+        <div class="theme-toggle">
+            <label class="switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider"></span>
+            </label>
         </div>
     </header>
 
-    <main>
-        <section class="job-grid-section">
-            <div id="jobGrid" class="job-grid">
-                <!-- Job Cards -->
-                <div class="job-card">
-                    <img src="icons/techcorp.png" alt="TechCorp icon">
-                    <h2>Frontend Developer</h2>
-                    <p class="company">TechCorp</p>
-                    <p class="location">San Francisco</p>
-                    <p class="details">5h ago | Full Time</p>
-                </div>
-                <div class="job-card">
-                    <img src="icons/innovatex.png" alt="InnovateX icon">
-                    <h2>Backend Engineer</h2>
-                    <p class="company">InnovateX</p>
-                    <p class="location">New York</p>
-                    <p class="details">1d ago | Full Time</p>
-                </div>
-                <div class="job-card">
-                    <img src="icons/designhub.png" alt="DesignHub icon">
-                    <h2>UI/UX Designer</h2>
-                    <p class="company">DesignHub</p>
-                    <p class="location">Remote</p>
-                    <p class="details">3d ago | Part Time</p>
-                </div>
-                <div class="job-card">
-                    <img src="icons/datapros.png" alt="DataPros icon">
-                    <h2>Data Scientist</h2>
-                    <p class="company">DataPros</p>
-                    <p class="location">Chicago</p>
-                    <p class="details">2h ago | Full Time</p>
-                </div>
-                <div class="job-card">
-                    <img src="icons/prodmasters.png" alt="ProdMasters icon">
-                    <h2>Product Manager</h2>
-                    <p class="company">ProdMasters</p>
-                    <p class="location">Seattle</p>
-                    <p class="details">12h ago | Full Time</p>
-                </div>
-                <div class="job-card">
-                    <img src="icons/appify.png" alt="Appify icon">
-                    <h2>Mobile Developer</h2>
-                    <p class="company">Appify</p>
-                    <p class="location">Austin</p>
-                    <p class="details">8h ago | Full Time</p>
-                </div>
-                <div class="job-card">
-                    <img src="icons/cloudnine.png" alt="CloudNine icon">
-                    <h2>DevOps Engineer</h2>
-                    <p class="company">CloudNine</p>
-                    <p class="location">Boston</p>
-                    <p class="details">2d ago | Full Time</p>
-                </div>
-                <div class="job-card">
-                    <img src="icons/sysanalyzers.png" alt="SysAnalyzers icon">
-                    <h2>Systems Analyst</h2>
-                    <p class="company">SysAnalyzers</p>
-                    <p class="location">Atlanta</p>
-                    <p class="details">6h ago | Part Time</p>
-                </div>
-                <div class="job-card">
-                    <img src="icons/aiexperts.png" alt="AIExperts icon">
-                    <h2>AI Specialist</h2>
-                    <p class="company">AIExperts</p>
-                    <p class="location">Los Angeles</p>
-                    <p class="details">1w ago | Full Time</p>
-                </div>
-                <div class="job-card">
-                    <img src="icons/secureit.png" alt="SecureIT icon">
-                    <h2>Cybersecurity Expert</h2>
-                    <p class="company">SecureIT</p>
-                    <p class="location">Washington DC</p>
-                    <p class="details">3h ago | Full Time</p>
-                </div>
-                <div class="job-card">
-                    <img src="icons/webworks.png" alt="WebWorks icon">
-                    <h2>Full Stack Developer</h2>
-                    <p class="company">WebWorks</p>
-                    <p class="location">Denver</p>
-                    <p class="details">4d ago | Full Time</p>
-                </div>
-                <div class="job-card">
-                    <img src="icons/mlgurus.png" alt="MLGurus icon">
-                    <h2>Machine Learning Engineer</h2>
-                    <p class="company">MLGurus</p>
-                    <p class="location">San Jose</p>
-                    <p class="details">5h ago | Full Time</p>
-                </div>
+    <!-- Search Bar Section -->
+    <section class="search-bar">
+        <input type="text" placeholder="Filter by title, companies, expertise...">
+        <input type="text" placeholder="Filter by location...">
+        <select>
+            <option value="">Full Time Only</option>
+            <option value="full-time">Full Time</option>
+            <option value="part-time">Part Time</option>
+        </select>
+        <button>Search</button>
+    </section>
+
+    <!-- Job Cards Section -->
+    <section class="job-cards">
+        <!-- Each job card will be created dynamically -->
+        <div class="job-card">
+            <div class="company-logo" style="background-color: #f39c12;">S</div>
+            <div class="job-details">
+                <p class="job-info">5h ago &#8226; Full Time</p>
+                <h3 class="job-title">Senior Software Engineer</h3>
+                <p class="job-location">United Kingdom</p>
             </div>
-            <button id="loadMoreBtn">Load More</button>
-        </section>
-    </main>
+        </div>
+
+        <div class="job-card">
+            <div class="company-logo" style="background-color: #e74c3c;">B</div>
+            <div class="job-details">
+                <p class="job-info">20h ago &#8226; Part Time</p>
+                <h3 class="job-title">Haskell and PureScript Dev</h3>
+                <p class="job-location">United States</p>
+            </div>
+        </div>
+
+        <div class="job-card">
+            <div class="company-logo" style="background-color: #3498db;">V</div>
+            <div class="job-details">
+                <p class="job-info">1d ago &#8226; Part Time</p>
+                <h3 class="job-title">Midlevel Back End Engineer</h3>
+                <p class="job-location">Russia</p>
+            </div>
+        </div>
+
+        <div class="job-card">
+            <div class="company-logo" style="background-color: #9b59b6;">O</div>
+            <div class="job-details">
+                <p class="job-info">2d ago &#8226; Full Time</p>
+                <h3 class="job-title">Senior Application Engineer</h3>
+                <p class="job-location">Japan</p>
+            </div>
+        </div>
+
+        <div class="job-card">
+            <div class="company-logo" style="background-color: #2ecc71;">P</div>
+            <div class="job-details">
+                <p class="job-info">2d ago &#8226; Full Time</p>
+                <h3 class="job-title">Remote DevOps Engineer</h3>
+                <p class="job-location">Thailand</p>
+            </div>
+        </div>
+
+        <div class="job-card">
+            <div class="company-logo" style="background-color: #34495e;">C</div>
+            <div class="job-details">
+                <p class="job-info">4d ago &#8226; Part Time</p>
+                <h3 class="job-title">Desktop Support Manager</h3>
+                <p class="job-location">Germany</p>
+            </div>
+        </div>
+
+        <div class="job-card">
+            <div class="company-logo" style="background-color: #1abc9c;">P</div>
+            <div class="job-details">
+                <p class="job-info">1w ago &#8226; Full Time</p>
+                <h3 class="job-title">iOS Engineer</h3>
+                <p class="job-location">United States</p>
+            </div>
+        </div>
+
+        <div class="job-card">
+            <div class="company-logo" style="background-color: #e67e22;">M</div>
+            <div class="job-details">
+                <p class="job-info">1w ago &#8226; Full Time</p>
+                <h3 class="job-title">Senior EJB Developer</h3>
+                <p class="job-location">United Kingdom</p>
+            </div>
+        </div>
+
+        <div class="job-card">
+            <div class="company-logo" style="background-color: #2c3e50;">C</div>
+            <div class="job-details">
+                <p class="job-info">1w ago &#8226; Part Time</p>
+                <h3 class="job-title">Senior Frontend Developer</h3>
+                <p class="job-location">Singapore</p>
+            </div>
+        </div>
+
+        <div class="job-card">
+            <div class="company-logo" style="background-color: #8e44ad;">M</div>
+            <div class="job-details">
+                <p class="job-info">2w ago &#8226; Freelance</p>
+                <h3 class="job-title">App & Website Designer</h3>
+                <p class="job-location">United States</p>
+            </div>
+        </div>
+
+        <div class="job-card">
+            <div class="company-logo" style="background-color: #16a085;">C</div>
+            <div class="job-details">
+                <p class="job-info">2w ago &#8226; Part Time</p>
+                <h3 class="job-title">Fullstack Developer</h3>
+                <p class="job-location">New Zealand</p>
+            </div>
+        </div>
+
+        <div class="job-card">
+            <div class="company-logo" style="background-color: #e74c3c;">T</div>
+            <div class="job-details">
+                <p class="job-info">1mo ago &#8226; Part Time</p>
+                <h3 class="job-title">Technical Lead Engineer</h3>
+                <p class="job-location">United Kingdom</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Load More Section -->
+    <button class="load-more">Load More</button>
 
     <script src="script.js"></script>
 </body>
