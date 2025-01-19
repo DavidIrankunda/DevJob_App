@@ -157,3 +157,23 @@
             }
         }
  
+
+
+        /* Style for the Load More button */
+button {
+    background-color: #007bff; /* Blue background */
+    color: #fff; /* White text */
+    font-size: 16px; /* Font size */
+    padding: 10px 20px; /* Padding for the button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    display: block; /* Block-level for centering */
+    margin: 0 auto; /* Center horizontally */
+    text-align: center; /* Center text */
+}
+
+/* Hover effect for the button */
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
