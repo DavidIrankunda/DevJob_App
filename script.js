@@ -1,46 +1,44 @@
-// JavaScript for theme toggle and search functionality
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
 
-document.addEventListener('DOMContentLoaded', () => {
-    const themeToggle = document.querySelector('.theme-switch input');
-    const body = document.body;
-  
-    // Theme Toggle
-    themeToggle.addEventListener('change', () => {
-      body.classList.toggle('dark', themeToggle.checked);
-    });
-  
-    // Search Functionality
-    const searchButton = document.querySelector('.search-bar button');
-    const titleInput = document.querySelector('.search-bar input[placeholder="Filter by title, companies, expertise..."]');
-    const locationInput = document.querySelector('.search-bar input[placeholder="Filter by location..."]');
-    const fullTimeOnly = document.querySelector('.search-bar input[type="checkbox"]');
-    const jobCards = document.querySelectorAll('.job-card');
-  
-    searchButton.addEventListener('click', () => {
-      const titleQuery = titleInput.value.toLowerCase();
-      const locationQuery = locationInput.value.toLowerCase();
-      const isFullTime = fullTimeOnly.checked;
-  
-      jobCards.forEach(card => {
-        const jobTitle = card.querySelector('h3').textContent.toLowerCase();
-        const jobLocation = card.querySelector('p:last-child').textContent.toLowerCase();
-        const jobType = card.querySelector('p:nth-child(2)').textContent.toLowerCase();
-  
-        let matchesTitle = !titleQuery || jobTitle.includes(titleQuery);
-        let matchesLocation = !locationQuery || jobLocation.includes(locationQuery);
-        let matchesType = !isFullTime || jobType.includes('full time');
-  
-        if (matchesTitle && matchesLocation && matchesType) {
-          card.style.display = '';
+themeToggle.addEventListener('change', () => {
+    body.classList.toggle('dark-theme');
+});
+
+
+
+const searchButton = document.getElementById('search-button');
+const jobCards = document.querySelectorAll('.job-card');
+
+// Function to filter job cards
+function filterJobs() {
+    const titleInput = document.getElementById('search-title').value.toLowerCase();
+    const locationInput = document.getElementById('search-location').value.toLowerCase();
+    const typeInput = document.getElementById('search-type').value;
+
+    jobCards.forEach(card => {
+        const title = card.querySelector('.job-title').textContent.toLowerCase();
+        const location = card.querySelector('.job-location').textContent.toLowerCase();
+        const jobInfo = card.querySelector('.job-info').textContent.toLowerCase();
+
+        if (
+            (title.includes(titleInput) || !titleInput) &&
+            (location.includes(locationInput) || !locationInput) &&
+            (jobInfo.includes(typeInput) || !typeInput)
+        ) {
+            card.style.display = 'block'; // Show matching card
         } else {
-          card.style.display = 'none';
+            card.style.display = 'none'; // Hide non-matching card
         }
-      });
     });
-  
-    // Reset search inputs on page load
-    titleInput.value = '';
-    locationInput.value = '';
-    fullTimeOnly.checked = false;
-  });
-  
+}
+
+// Trigger search on button click
+searchButton.addEventListener('click', filterJobs);
+
+// Trigger search on Enter key press
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        filterJobs();
+    }
+});

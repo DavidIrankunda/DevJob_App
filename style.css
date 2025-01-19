@@ -177,3 +177,163 @@ button {
 button:hover {
     background-color: #0056b3; /* Darker blue on hover */
 }
+
+
+/* General styles for the job cards table */
+.job-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 3 columns per row */
+    gap: 20px; /* Spacing between cards */
+    margin: 20px; /* Outer margin for the grid */
+    padding: 10px;
+    background-color: #f8f9fa; /* Light background for the section */
+    border-radius: 8px; /* Rounded corners for the section */
+}
+
+/* Job card styles */
+.job-card {
+    background-color: #fff; /* White background */
+    border: 1px solid #ddd; /* Subtle border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Company logo styles */
+.company-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff; /* White text inside the logo */
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Job details styles */
+.job-details {
+    font-family: Arial, sans-serif;
+}
+
+.job-info {
+    font-size: 14px;
+    color: #6c757d; /* Muted color for job info */
+    margin-bottom: 5px;
+}
+
+.job-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.job-location {
+    font-size: 16px;
+    color: #007bff; /* Blue color for location */
+}
+
+
+/* Light Theme */
+body {
+    background-color: #f8f9fa;
+    color: #212529;
+    font-family: Arial, sans-serif;
+}
+
+.job-cards {
+    background-color: #ffffff;
+}
+
+.job-card {
+    background-color: #ffffff;
+    color: #212529;
+}
+
+/* Dark Theme */
+body.dark-theme {
+    background-color: #212529;
+    color: #f8f9fa;
+}
+
+body.dark-theme .job-cards {
+    background-color: #2a2a2a;
+}
+
+body.dark-theme .job-card {
+    background-color: #343a40;
+    color: #f8f9fa;
+}
+
+
+/* Header styling */
+.logo i {
+    margin-right: 8px; /* Add space between icon and text */
+    color: #007bff; /* Icon color */
+    font-size: 20px;
+}
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+}
+
+.theme-toggle i {
+    font-size: 18px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* Search Bar styling */
+.search-bar {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+    align-items: center;
+}
+
+.search-group {
+    position: relative;
+    flex: 1;
+}
+
+.search-group i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #3b98e9;
+    font-size: 16px;
+}
+
+.search-group input,
+.search-group select {
+    padding: 10px 10px 10px 35px; /* Add space for the icon */
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+button#search-button {
+    background-color: #398de6;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+button#search-button i {
+    font-size: 16px;
+}
