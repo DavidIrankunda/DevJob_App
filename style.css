@@ -18,7 +18,7 @@
 
         /* Header */
         header {
-            background: linear-gradient(90deg, #4b6cb7, #182848);
+            background: #398de6;
             color: #fff;
             padding: 20px;
             width: 100%;
@@ -161,16 +161,16 @@
 
         /* Style for the Load More button */
 button {
-    background-color: #007bff; /* Blue background */
-    color: #fff; /* White text */
-    font-size: 16px; /* Font size */
-    padding: 10px 20px; /* Padding for the button */
-    border: none; /* No border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    display: block; /* Block-level for centering */
-    margin: 0 auto; /* Center horizontally */
-    text-align: center; /* Center text */
+    background-color: #007bff;
+    color: #fff; 
+    font-size: 16px; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px;
+    cursor: pointer; 
+    display: block; 
+    margin: 0 auto; 
+    text-align: center;
 }
 
 /* Hover effect for the button */
@@ -178,24 +178,22 @@ button:hover {
     background-color: #0056b3; /* Darker blue on hover */
 }
 
-
-/* General styles for the job cards table */
 .job-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 3 columns per row */
-    gap: 20px; /* Spacing between cards */
-    margin: 20px; /* Outer margin for the grid */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    gap: 20px; 
+    margin: 20px; 
     padding: 10px;
-    background-color: #f8f9fa; /* Light background for the section */
-    border-radius: 8px; /* Rounded corners for the section */
+    background-color: #f8f9fa; 
+    border-radius: 8px; 
 }
 
 /* Job card styles */
 .job-card {
-    background-color: #fff; /* White background */
-    border: 1px solid #ddd; /* Subtle border */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    background-color: #fff; 
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
     padding: 15px;
     display: flex;
     flex-direction: column;
@@ -211,7 +209,7 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #fff; /* White text inside the logo */
+    color: #fff; 
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 10px;
@@ -224,7 +222,7 @@ button:hover {
 
 .job-info {
     font-size: 14px;
-    color: #6c757d; /* Muted color for job info */
+    color: #6c757d; 
     margin-bottom: 5px;
 }
 
@@ -236,7 +234,7 @@ button:hover {
 
 .job-location {
     font-size: 16px;
-    color: #007bff; /* Blue color for location */
+    color: #007bff; 
 }
 
 
@@ -274,8 +272,8 @@ body.dark-theme .job-card {
 
 /* Header styling */
 .logo i {
-    margin-right: 8px; /* Add space between icon and text */
-    color: #007bff; /* Icon color */
+    margin-right: 8px; 
+    color: #86b2e5; 
     font-size: 20px;
 }
 
@@ -314,7 +312,7 @@ body.dark-theme .job-card {
 
 .search-group input,
 .search-group select {
-    padding: 10px 10px 10px 35px; /* Add space for the icon */
+    padding: 10px 10px 10px 35px;
     width: 100%;
     border: 1px solid #ccc;
     border-radius: 5px;
