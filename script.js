@@ -4,13 +4,13 @@ const body = document.body;
 themeToggle.addEventListener('change', () => {
     body.classList.toggle('dark-theme');
 });
+// The above code is theme just.
 
 
-
+// Function to filter job cards
 const searchButton = document.getElementById('search-button');
 const jobCards = document.querySelectorAll('.job-card');
 
-// Function to filter job cards
 function filterJobs() {
     const titleInput = document.getElementById('search-title').value.toLowerCase();
     const locationInput = document.getElementById('search-location').value.toLowerCase();
@@ -26,17 +26,17 @@ function filterJobs() {
             (location.includes(locationInput) || !locationInput) &&
             (jobInfo.includes(typeInput) || !typeInput)
         ) {
-            card.style.display = 'block'; // Show matching card
+            card.style.display = 'block'; 
         } else {
-            card.style.display = 'none'; // Hide non-matching card
+            card.style.display = 'none'; 
         }
     });
 }
 
-// Trigger search on button click
+// search on button click
 searchButton.addEventListener('click', filterJobs);
 
-// Trigger search on Enter key press
+// search on Enter key press
 document.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
         filterJobs();
